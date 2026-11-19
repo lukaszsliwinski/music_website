@@ -1,7 +1,7 @@
 services:
-  solo_website:
+  music_website:
     build: .
-    container_name: solo_website
+    container_name: music_website
     restart: always
     env_file:
       - .env
@@ -13,14 +13,14 @@ services:
     # Traefik: domain routing, TLS certificate and HSTS header.
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.solo_website.rule=Host(`${DOMAIN}`) || Host(`www.${DOMAIN}`)"
-      - "traefik.http.routers.solo_website.entrypoints=websecure"
-      - "traefik.http.routers.solo_website.tls.certresolver=le"
-      - "traefik.http.services.solo_website.loadbalancer.server.port=${PORT:-3000}"
-      - "traefik.http.middlewares.solo_website-hsts.headers.stsSeconds=31536000"
-      - "traefik.http.middlewares.solo_website-hsts.headers.stsIncludeSubdomains=true"
-      - "traefik.http.middlewares.solo_website-hsts.headers.stsPreload=true"
-      - "traefik.http.routers.solo_website.middlewares=solo_website-hsts@docker"
+      - "traefik.http.routers.music_website.rule=Host(`${DOMAIN}`) || Host(`www.${DOMAIN}`)"
+      - "traefik.http.routers.music_website.entrypoints=websecure"
+      - "traefik.http.routers.music_website.tls.certresolver=le"
+      - "traefik.http.services.music_website.loadbalancer.server.port=${PORT:-3000}"
+      - "traefik.http.middlewares.music_website-hsts.headers.stsSeconds=31536000"
+      - "traefik.http.middlewares.music_website-hsts.headers.stsIncludeSubdomains=true"
+      - "traefik.http.middlewares.music_website-hsts.headers.stsPreload=true"
+      - "traefik.http.routers.music_website.middlewares=music_website-hsts@docker"
     networks:
       - web
     expose:
