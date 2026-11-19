@@ -16,7 +16,6 @@ The official website of my solo music project, built entirely by me from start t
 - **React 19 and TypeScript** – typed components and data
 - **Tailwind CSS 4** – styling and responsiveness, with a theme based on CSS variables
 - **Motion** – intro animation and animated elements that appear on scroll
-- **Inline SVG and Font Awesome** – icons that inherit theme colors, and music service icons
 - **SoundCloud Widget** – player embedded in the music section
 
 **Deployment**
